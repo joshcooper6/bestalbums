@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { AppContext } from "./App";
 
 const CardBg = styled.div`
-
-
+    background-image: url(${props => props.bg});
+    background-position: top;
+    background-size: cover;
 `
 
 const Track = styled.button`
@@ -35,11 +36,9 @@ export default function Card(props) {
         }))
     };
 
-    const ref = useRef();
-
     return <>
-    <div className="flex flex-col gap-4 w-11/12 md:w-auto max-h-[700px] overflow-scroll">
-        <div onClick={(e) => {setExpanded(prev => !prev); }} className="pb-4 flex backdrop-blur-lg flex-col justify-center drop-shadow-xl items-center border-0 cursor-pointer rounded-xl hover:bg-slate-800  hover:text-white transition_ease">
+    <div className="flex flex-col md:gap-2 w-11/12 md:w-auto max-h-[700px] overflow-scroll">
+        <div onClick={(e) => {setExpanded(prev => !prev); }} className="p-8 md:p-6 flex backdrop-blur-lg flex-col justify-center drop-shadow-xl items-center border-0 cursor-pointer rounded-xl hover:bg-slate-800  hover:text-white transition_ease">
                     <img 
                         className={`m-4 rounded-xl object-center object-cover w-11/12 max-h-[300px] rounded-bl-none rounded-br-none`}
                         src={tgt.cover} 
@@ -56,11 +55,11 @@ export default function Card(props) {
                     
         </div>
 
-        <div className={`${expanded ? 'max-h-[1000px] max-w-[1000px]' : 'max-h-0 opacity-0 max-w-0'} p-4 border-4 rounded-xl transition_ease overflow-scroll flex flex-col gap-1`}>
-            {tgt.tracks.map((track) => {
-                return <Track disabled={!expanded && true} onClick={(e) => {hc(e, track, tgt); setExpanded(false);}} key={track.title} children={`${track.title}`} />
-            })}
-        </div>
+        <CardBg className={`${expanded ? 'max-h-[1000px] max-w-[1000px]' : 'max-h-0 opacity-0 max-w-0'} h-[300px p-4 border-t-4 gap-2 transition_ease overflow-scroll flex flex-col`}>
+                {tgt.tracks.map((track) => {
+                    return <Track disabled={!expanded && true} onClick={(e) => {hc(e, track, tgt); setExpanded(false);}} key={track.title} children={`${track.title}`} />
+                })}
+        </CardBg>
     </div>
     </>
 }

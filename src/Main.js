@@ -10,7 +10,7 @@ export default function Main() {
     })
 
     return <>
-        <div className="flex gap-4 mt-10 flex-wrap justify-center items-center mb-[100px]">
+        <div className="flex gap-4 mt-10 flex-wrap justify-center items-center mb-[120px]">
             {albums}
         </div>
         <Player />

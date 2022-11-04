@@ -18,10 +18,6 @@ export default function Play(){
 
     useEffect(() => { setRunAnim(true) }, [active]);
 
-    // let videoCode;
-    // let url = active.path;
-    // videoCode = url.split('embed/')[1].split('?')[0];
-
     return<>
         <Footer bg={active} onAnimationEnd={() => {setRunAnim(false)}} onClick={() => setClicked(prev => !prev)} className={`w-11/12 ${!clicked ? 'max-h-[80px]' : 'max-h-[450px]'} transition_ease ${runAnim && 'bounce'} backdrop-blur-3xl cursor-grab fixed bottom-0 overflow-hidden min-h-[100px] z-0 rounded-tl-3xl rounded-tr-3xl flex flex-col`}>
             <div className="backdrop-blur-lg bg-black bg-opacity-70 w-full flex flex-col">
