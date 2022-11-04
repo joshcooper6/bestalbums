@@ -12,16 +12,27 @@ function App() {
   const [confirmed, setConfirmed] = useState(false);
 
   const randomNum = Math.floor(Math.random() * data.length);
+  const randomNum2 = Math.floor(Math.random() * data[randomNum].tracks.length);
+
 
   const [active, setActive] = useState({
     album: '',
     artist: '',
     title: '',
-    path: ''
+    path: '',
+    cover: ''
 });
 
 useEffect(() => {
-  setActive(data[randomNum].tracks[randomNum]);
+  const tgt = data[randomNum];
+  const track = tgt.tracks[randomNum2];
+  setActive({
+    album: tgt.title,
+    artist: tgt.artist,
+    title: track.title,
+    path: track.path,
+    cover: tgt.cover
+});
 }, [])
 
   useEffect(() => {
@@ -34,7 +45,7 @@ useEffect(() => {
 
   return (
     <>
-    <div className="flex min-h-screen flex-col justify-center items-center">
+    <div className="flex min-h-screen flex-col justify-center items-center bg-slate-100">
         <AppContext.Provider value={{msg, confirmed, setMsg, setConfirmed, active, setActive}}>
           { (msg === '' && confirmed) ? <Main /> : <Landing /> }    
         </AppContext.Provider>
