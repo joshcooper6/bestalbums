@@ -38,10 +38,10 @@ export default function Card(props) {
     const ref = useRef();
 
     return <>
-    <div className="flex flex-col gap-2 max-h-[600px] overflow-scroll">
-        <div onClick={(e) => {setExpanded(prev => !prev); window.scrollTo(0, document.body.scrollHeight)}} className="pb-4 flex backdrop-blur-lg flex-col justify-center drop-shadow-xl items-center border-0 cursor-pointer rounded-xl hover:bg-slate-800  hover:text-white transition_ease">
+    <div className="flex flex-col gap-4 w-11/12 md:w-auto max-h-[700px] overflow-scroll">
+        <div onClick={(e) => {setExpanded(prev => !prev); }} className="pb-4 flex backdrop-blur-lg flex-col justify-center drop-shadow-xl items-center border-0 cursor-pointer rounded-xl hover:bg-slate-800  hover:text-white transition_ease">
                     <img 
-                        className={`m-4 rounded-xl object-cover w-11/12 max-h-[300px] rounded-bl-none rounded-br-none`}
+                        className={`m-4 rounded-xl object-center object-cover w-11/12 max-h-[300px] rounded-bl-none rounded-br-none`}
                         src={tgt.cover} 
                         alt={`${tgt.title} album cover`} 
                     />
@@ -56,7 +56,7 @@ export default function Card(props) {
                     
         </div>
 
-        <div className={`${expanded ? 'max-h-[1000px] max-w-[1000px]' : 'max-h-0 opacity-0 max-w-0'} p-4 border rounded-xl transition_ease overflow-scroll flex flex-col gap-1`}>
+        <div className={`${expanded ? 'max-h-[1000px] max-w-[1000px]' : 'max-h-0 opacity-0 max-w-0'} p-4 border-4 rounded-xl transition_ease overflow-scroll flex flex-col gap-1`}>
             {tgt.tracks.map((track) => {
                 return <Track disabled={!expanded && true} onClick={(e) => {hc(e, track, tgt); setExpanded(false);}} key={track.title} children={`${track.title}`} />
             })}

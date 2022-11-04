@@ -47,5 +47,19 @@ export const data = [
             {id: '5', title: 'Beg For You', path: 'https://youtube.com/embed/Xt5YLbHIIto?autoplay=1'},
             {id: '6', title: 'Move Me', path: 'https://youtube.com/embed/0XspdcujEP0?autoplay=1'}
         ]
+    },
+    {
+        artist: 'Fred again...',
+        title: 'Actual Life 3',
+        year: 2022,
+        cover: 'https://i.scdn.co/image/ab67616d0000b27356c393fab9a517cad09be7de',
+        tracks: [
+            {id: '1', title: `January 1st 2022`, path: 'https://youtube.com/embed/jRVnYzlyCh4?autoplay=1'},
+            {id: '2', title: 'Eyelar (shutters)', path: 'https://youtube.com/embed/Vlp9oCe6F8U?autoplay=1'},
+            {id: '3', title: 'Delilah (pull me out of this)', path:'https://youtube.com/embed/Cl6Rz1Uvi2M?autoplay=1'},
+            {id: '4', title: 'Nathan (still breathing)', path: 'https://youtube.com/embed/_-xRPba9qdY?autoplay=1'},
+            {id: '5', title: 'Danielle (smile on my face)', path: 'https://youtube.com/embed/qJ1GBL1TPLg?autoplay=1'},
+            {id: '6', title: 'Kammy (like i do)', path: 'https://youtube.com/embed/H80SKrO_dIM?autoplay=1'}
+        ]
     }
 ];
