@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.transition_ease {
+  transition: 500ms ease;
+}
+
+.fadeIn {
+  animation: fadeIn 1s linear forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+.marquee {
+  width: inherit;
+  line-height: 50px;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  animation: marquee 10s linear alternate infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(50%, 0); }
+}
+
+.bounce {
+  animation: bounce 1500ms linear alternate;
+  animation-iteration-count: 1;
+}
+
+@keyframes bounce {
+  0% {
+    max-height: 80px;
+  } 50% {
+    max-height: 150px;
+  } 100% {
+    max-height: 80px;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

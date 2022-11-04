@@ -1,0 +1,18 @@
+import { data } from "./data";
+import Player from "./Player";
+import Card from "./Card";
+
+export default function Main() {
+    console.log(data)
+
+    const albums = data.map((album) => {
+        return <Card tgt={album} />
+    })
+
+    return <>
+        <div className="flex flex-wrap justify-center items-center md:mb-[60px] lg:mb-[0] mt-10 mb-[100px]">
+            {albums}
+        </div>
+        <Player />
+    </>
+}
