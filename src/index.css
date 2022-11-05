@@ -56,6 +56,13 @@ body {
   }
 }
 
+.rotate {
+  /* animation: rotate 1000ms linear forwards; */
+  transform: rotateY(180deg);
+}
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

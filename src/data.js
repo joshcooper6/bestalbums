@@ -31,7 +31,19 @@ export const data = [
             {id: '3', title: 'Alien Superstar', path:'https://youtube.com/embed/kINlZV44JeM?autoplay=1'},
             {id: '4', title: 'Cuff It', path: 'https://youtube.com/embed/AUnzoN7pFE0?autoplay=1'},
             {id: '5', title: 'Energy', path: 'https://youtube.com/embed/vMeUz6-VEec?autoplay=1'},
-            {id: '6', title: 'Break My Soul', path: 'https://youtube.com/embed/y6dw-v4BH-Y?autoplay=1'}
+            {id: '6', title: 'Break My Soul', path: 'https://youtube.com/embed/y6dw-v4BH-Y?autoplay=1'},
+            {id: '7', title: 'Church Girl', path: 'https://youtube.com/embed/_sZirWKsOBg?autoplay=1'},
+            {id: '8', title: 'Plastic Off The Sofa', path: 'https://youtube.com/embed/M-ruSdKbQUM?autoplay=1'},
+            {id: '9', title: 'Virgos Groove', path: 'https://youtube.com/embed/aD3HgrfjrAw?autoplay=1'},
+            {id: '10', title: 'Move', path: 'https://youtube.com/embed/UlbVbKSiTuM?autoplay=1'},
+            {id: '11', title: 'Heated', path: 'https://youtube.com/embed/o3WqRPM6M0A?autoplay=1'},
+            {id: '12', title: 'Thique', path: 'https://youtube.com/embed/kmh-ejuvnA?autoplay=1'},
+            {id: '13', title: 'All Up In Your Mind', path: 'https://youtube.com/embed/Z7Zzl9J0YvQ?autoplay=1'},
+            {id: '14', title: 'America Has A Problem', path :'https://youtube.com/embed/niwohlRJHqc?autoplay=1'},
+            {id: '15', title: 'Pure/Honey', path :'https://youtube.com/embed/7beBL5djE8E?autoplay=1'},
+            {id: '16', title: 'Summer Renaissance', path: 'https://youtube.com/embed/AWHMgWT05RE?autoplay=1'}
+
+
         ]
     },
     {
