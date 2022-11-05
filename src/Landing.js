@@ -9,9 +9,10 @@ export default function Landing() {
     return <>
     <div className="h-full text-center max-w-[600px] w-full flex flex-col">
         { confirmed ? <Typed 
-          strings={[msg]}
+          strings={['Music contains the memories of our lives...', 'Here are some of mine...']}
           typeSpeed={5}
-          className={'text-3xl font-black'}
+          backSpeed={5}
+          className={'text-3xl font-black self-center w-9/12 '}
         /> : <h1
         children={'Ready to listen to my top albums of 2022?'}
         className={`text-3xl ${toggled && 'text-white'} w-9/12 self-center font-black fadeIn transition_ease`}

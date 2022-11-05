@@ -42,8 +42,6 @@ export const data = [
             {id: '14', title: 'America Has A Problem', path :'https://youtube.com/embed/niwohlRJHqc?autoplay=1'},
             {id: '15', title: 'Pure/Honey', path :'https://youtube.com/embed/7beBL5djE8E?autoplay=1'},
             {id: '16', title: 'Summer Renaissance', path: 'https://youtube.com/embed/AWHMgWT05RE?autoplay=1'}
-
-
         ]
     },
     {

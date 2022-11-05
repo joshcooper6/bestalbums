@@ -26,11 +26,11 @@ body {
 }
 
 .marquee {
-  width: inherit;
+  width: 200px;
   /* line-height: 50px; */
   color: white;
   white-space: nowrap;
-  overflow: hidden;
+  /* overflow: hidden; */
   box-sizing: border-box;
   animation: marquee 25s linear alternate infinite;
 }

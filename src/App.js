@@ -1,11 +1,10 @@
 import { useEffect, useState, createContext, useContext } from 'react';
-import './App.css';
 import Landing from './Landing';
 import Main from './Main';
 import { data } from './data';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Body = styled.div`
   background-image: url(${props => props.img});
   background-size: cover;
   background-position: center;
@@ -54,11 +53,11 @@ useEffect(() => {
 
   return (
     <>
-    <Container img={toggled && active.cover} className="flex min-h-screen flex-col justify-center items-center bg-slate-100">
-        <AppContext.Provider value={{msg, confirmed, toggled, setToggled, setMsg, setConfirmed, active, setActive}}>
+    <Body img={toggled && active.cover} className="flex min-h-screen flex-col justify-center items-center bg-slate-100">
+        <AppContext.Provider value={{msg, data, confirmed, toggled, setToggled, setMsg, setConfirmed, active, setActive}}>
           { (msg === '' && confirmed) ? <Main /> : <Landing /> }    
         </AppContext.Provider>
-    </Container>
+      </Body>
     </>
   );
 }
