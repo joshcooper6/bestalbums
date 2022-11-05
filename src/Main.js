@@ -2,9 +2,10 @@ import { data } from "./data";
 import Player from "./Player";
 import Card from "./Card";
 import { useContext, useEffect, useState } from "react";
-
+import Search from "./Search";
 import styled, { keyframes } from "styled-components";
 import { AppContext } from "./App";
+import srch from './assets/srch.svg';
 
 const Spin = keyframes`
     0% {
@@ -57,18 +58,16 @@ export default function Main() {
             <span class="slider round"></span>
         </label> */}
 
-            <div className="flex gap-4 mt-10 flex-wrap justify-center items-center mb-[120px]">
-                {/* {albums}
-                <Player /> */}
-
-                {loading ? <>
-                    <Spinner  />
-
-                </> : <>
+            <div className={`flex gap-4 mt-10 w-10/12 flex-wrap justify-center items-center mb-[120px]`}>
+                { loading ? <Spinner  /> : <>
+                    <Search searchVis={searchVis} setSearchVis={setSearchVis} />
+                    {/* <button className="absolute top-10 right-10 z-10" onClick={() => {console.log(searchVis); setSearchVis(prev => !prev)}}>
+                        <img src={srch} />
+                    </button> */}
                     {albums}
                     <Player />
-                </>}
-            </div>
+                </> }
+            </div> 
 
 
     </>

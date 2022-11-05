@@ -8,6 +8,24 @@ const Body = styled.div`
   background-image: url(${props => props.img});
   background-size: cover;
   background-position: center;
+
+  // &:before {
+  //   content: '';
+  //   top: 3em;
+  //   margin: 0 auto;
+  //   right: 0;
+  //   position: fixed;
+  //   left: 0;
+  //   width: 90vw;
+  //   height: 100vh;
+  //   background-color: transparent;
+  //   --tw-backdrop-blur: 1em;
+  //   z-index: 0;
+  //   border-top-right-radius: 1em;
+  //   border-top-left-radius: 1em;
+  //   border: 0 grey solid;
+  //   box-shadow: 0 0 1em black;
+  // }
 `
 
 export const AppContext = createContext();
@@ -26,19 +44,21 @@ function App() {
     title: '',
     path: '',
     cover: ''
-});
+  });
 
-useEffect(() => {
-  const tgt = data[randomNum];
-  const track = tgt.tracks[randomNum2];
-  setActive({
-    album: tgt.title,
-    artist: tgt.artist,
-    title: track.title,
-    path: track.path,
-    cover: tgt.cover
-});
-}, [])
+  const [playerStatus, setPlayerStatus] = useState('');
+
+  useEffect(() => {
+    const tgt = data[randomNum];
+    const track = tgt.tracks[randomNum2];
+    setActive({
+      album: tgt.title,
+      artist: tgt.artist,
+      title: track.title,
+      path: track.path,
+      cover: tgt.cover
+  });
+  }, [])
 
   useEffect(() => {
     if (confirmed) {
@@ -54,7 +74,7 @@ useEffect(() => {
   return (
     <>
     <Body img={toggled && active.cover} className="flex min-h-screen flex-col justify-center items-center bg-slate-100">
-        <AppContext.Provider value={{msg, data, confirmed, toggled, setToggled, setMsg, setConfirmed, active, setActive}}>
+        <AppContext.Provider value={{msg, data, confirmed, playerStatus, setPlayerStatus, toggled, setToggled, setMsg, setConfirmed, active, setActive}}>
           { (msg === '' && confirmed) ? <Main /> : <Landing /> }    
         </AppContext.Provider>
       </Body>

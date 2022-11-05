@@ -16,7 +16,7 @@ const Footer = styled.div`
 
 export default function Play(){
 
-    const { active, setActive, data } = useContext(AppContext);
+    const { active, setActive, data, playerStatus, setPlayerStatus } = useContext(AppContext);
     const [clicked, setClicked] = useState(false);
     const [runAnim, setRunAnim] = useState(false);
 

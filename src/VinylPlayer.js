@@ -1,6 +1,8 @@
-import { useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { AppContext } from './App';
+import { data } from './data';
+
 
 const Turntable = styled.div`
     position: relative;
@@ -11,7 +13,7 @@ const Turntable = styled.div`
     width: 90%;
     max-width: 310px;
     height:280px;
-    background: orange;
+    background: grey;
     border-radius: 10px;
     box-shadow: inset 0 0 10px rgba(255,255,255,0.7);
 `
@@ -26,7 +28,6 @@ const Spin = keyframes`
     }
 `
 const Record = styled.div`
-
     position: absolute;
     left: 35px;
     top: 35px;
@@ -144,7 +145,7 @@ const Arm = styled.div`
     border-radius: 0 0 30% 0;
     animation: ${ArmTwitch} 0.5s infinite;
     animation-direction: alternate-reverse;
-    animation-play-state: ${props => props.spinning ? 'play' : 'paused'};
+    animation-play-state: ${props => props.spinning ? 'running' : 'paused'};
 
     &:before {
         content: '';
@@ -159,6 +160,19 @@ const Arm = styled.div`
         clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
     }
 `
+
+const Bounce = keyframes`
+    0% {
+        bottom: 20px
+    } 50% {
+        bottom: 18px
+    } 75% {
+        bottom: 15px
+    } 100% {
+        bottom: 20px
+    }
+`
+
 const Dial = styled.div`
     position: absolute;
     bottom: 20px;
@@ -170,6 +184,7 @@ const Dial = styled.div`
     transition: 1s ease;
     transform: ${props => props.spinning ? 'rotate(180deg)' : ''};
     cursor: pointer;
+    animation: ${Bounce} ${props => props.spinning ? '0': '2s'} infinite alternate;
 
     &:before {
         content: '';
@@ -189,15 +204,15 @@ const Dial = styled.div`
     // }
 `
 
-
 export default function VinylPlayer(props) {
-    const { active, setConfirmed } = useContext(AppContext);
+    const { active, setConfirmed, playerStatus } = useContext(AppContext);
     const [spinning, setSpinning] = useState(false);
 
+
     return <Turntable>
-        <Record active={active} spinning={spinning} children={<Inner active={active} />} />
-        <Overlay />
-        <ArmHolder children ={<Arm spinning={spinning} />} />
-        <Dial spinning={spinning} onClick={() => {setSpinning(prev => !prev); setTimeout(() => {setConfirmed(true)}, 500);}} />
+            <Record active={active} playerStatus={playerStatus} spinning={spinning} children={<Inner active={active} />} />
+            <Overlay />
+            <ArmHolder children ={<Arm spinning={spinning} />} />
+            <Dial spinning={spinning} onClick={() => {setSpinning(prev => !prev); setTimeout(() => {setConfirmed(true)}, 500);}} />
     </Turntable>
 }

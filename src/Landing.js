@@ -14,10 +14,16 @@ export default function Landing() {
           typeSpeed={5}
           backSpeed={5}
           className={`text-4xl ${toggled && 'text-white'} w-9/12 min-h-[150px] self-center text-left tracking-tight font-black fadeIn transition_ease`}
-          /> : <h1
+          /> : <div className="flex flex-col w-full justify-center items-center">
+            <h1
         children={'Ready to listen to my top albums of 2022?'}
-        className={`text-4xl ${toggled && 'text-white'} w-9/12 min-h-[150px] leading-[50px] self-center text-left tracking-tight font-black fadeIn transition_ease`}
-        /> }
+        className={`text-4xl ${toggled && 'text-white'} w-9/12 min-h-[80px] leading-[35px] self-center text-left tracking-tight font-black fadeIn transition_ease`}
+        />
+        <h2
+        className="text-left self-center m-0 mt-2 w-9/12 uppercase tracking-widest font-light opacity-40"
+        children={'Tap the dial above to get started...'}
+        />
+        </div>}
         <VinylPlayer className={''} />
         {/* <button 
           onClick={() => { setConfirmed(true); setMsg('Music contains the memories of our lives... here are some of mine.'); }} 
