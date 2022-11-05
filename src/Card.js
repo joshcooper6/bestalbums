@@ -8,13 +8,6 @@ const CardBg = styled.div`
     background-size: cover;
 `
 
-const Cover = styled.div`
-    background-image: url(${props => props.bg});
-    background-size: cover;
-    background-position: center;
-    // min-height: 300px;
-`
-
 const Track = styled.button`
     padding: .5em;
     border-radius: 10px; 
