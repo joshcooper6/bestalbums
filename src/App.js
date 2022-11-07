@@ -1,31 +1,19 @@
-import { useEffect, useState, createContext, useContext } from 'react';
-import Landing from './Landing';
-import Main from './Main';
+import { useEffect, useState, createContext, useContext, lazy, Suspense } from 'react';
+// import Landing from './Landing';
+// import Main from './Main';
 import { data } from './data';
 import styled from 'styled-components';
+
+const Landing = lazy(() => import('./Landing.js'));
+const Main = lazy(() => import('./Main.js'));
+
+
+
 
 const Body = styled.div`
   background-image: url(${props => props.img});
   background-size: cover;
   background-position: center;
-
-  // &:before {
-  //   content: '';
-  //   top: 3em;
-  //   margin: 0 auto;
-  //   right: 0;
-  //   position: fixed;
-  //   left: 0;
-  //   width: 90vw;
-  //   height: 100vh;
-  //   background-color: transparent;
-  //   --tw-backdrop-blur: 1em;
-  //   z-index: 0;
-  //   border-top-right-radius: 1em;
-  //   border-top-left-radius: 1em;
-  //   border: 0 grey solid;
-  //   box-shadow: 0 0 1em black;
-  // }
 `
 
 export const AppContext = createContext();
@@ -75,7 +63,9 @@ function App() {
     <>
     <Body img={toggled && active.cover} className="flex min-h-screen flex-col justify-center items-center bg-slate-100">
         <AppContext.Provider value={{msg, data, confirmed, playerStatus, setPlayerStatus, toggled, setToggled, setMsg, setConfirmed, active, setActive}}>
-          { (msg === '' && confirmed) ? <Main /> : <Landing /> }    
+            <Suspense fallback={<div>Loading</div>}>
+              { (msg === '' && confirmed) ? <Main /> : <Landing /> }    
+            </Suspense>
         </AppContext.Provider>
       </Body>
     </>

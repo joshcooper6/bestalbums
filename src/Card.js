@@ -36,10 +36,10 @@ export default function Card(props) {
     };
 
     return <>
-    <div className="flex flex-col md:gap-2 w-11/12 md:w-auto max-h-[700px] overflow-scroll">
-        <div onClick={(e) => {setExpanded(prev => !prev); e.target.scrollIntoView(); }} className={`${expanded && 'bg-slate-800'} p-8 md:p-6 flex md:min-w-[400px] min-w-[300px] backdrop-blur-lg flex-col justify-center drop-shadow-xl items-center border-0 cursor-pointer rounded-xl hover:bg-slate-800  hover:text-white ${toggled || expanded && 'text-white'} transition_ease`}>
+    <div className="flex flex-col md:gap-2 w-11/12 md:w-auto max-h-[700px]">
+        <div onClick={(e) => {setExpanded(prev => !prev); e.target.scrollIntoView(); }} className={`${expanded && 'bg-slate-800'} p-8 md:p-6 flex md:min-w-[400px] min-w-[300px] backdrop-blur-lg flex-col justify-center items-center border-0 cursor-pointer rounded-xl hover:bg-slate-800  hover:text-white ${toggled || expanded && 'text-white'} transition_ease`}>
                     <img 
-                        className={`m-4 ${expanded ? 'max-h-0 m-0' : 'max-h-[300px]'} min-w-[250px] md:max-w-[300px] max-w-[700px] rounded-xl object-center transition_ease object-cover w-11/12  rounded-bl-none rounded-br-none drop-shadow-lg`}
+                        className={`${expanded ? 'max-h-0 m-0' : 'max-h-[300px] m-4'} min-w-[250px] md:max-w-[300px] max-w-[700px] rounded-xl object-center transition_ease object-cover w-11/12  rounded-bl-none rounded-br-none drop-shadow-lg`}
                         src={tgt.cover} 
                         alt={`${tgt.title} album cover`} 
                     />
@@ -47,7 +47,7 @@ export default function Card(props) {
                         children={tgt.title}
                         className={` font-bold uppercase text-3xl self-start ml-4 tracking-tight`}
                     />
-                    <h2
+                    <h3
                         children={tgt.artist}
                         className={` font-light uppercase text-xl self-start ml-4 tracking-widest`}
                     />

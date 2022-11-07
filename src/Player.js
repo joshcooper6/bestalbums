@@ -37,7 +37,7 @@ export default function Play(){
     };
 
     return<>
-        <Footer bg={active} onAnimationEnd={() => {setRunAnim(false)}} onClick={() => setClicked(prev => !prev)} className={`w-11/12 max-w-lg ${!clicked ? 'max-h-[80px]' : 'max-h-[450px]'} transition_ease ${(runAnim && !clicked) && 'bounce'} backdrop-blur-3xl right-0 cursor-grab fixed bottom-0  drop-shadow-2xl overflow-hidden min-h-[100px] z-0 rounded-tl-3xl flex flex-col`}>
+        <Footer bg={active} onAnimationEnd={() => {setRunAnim(false)}} onClick={() => setClicked(prev => !prev)} className={`w-11/12 max-w-lg ${!clicked ? 'max-h-[80px]' : 'max-h-[450px]'} transition_ease ${(runAnim && !clicked) && 'bounce'} backdrop-blur-3xl rounded-tr-3xl cursor-grab fixed bottom-0  drop-shadow-2xl overflow-hidden min-h-[100px] z-0 rounded-tl-3xl flex flex-col`}>
             <div className="backdrop-blur-lg bg-black bg-opacity-70 w-full flex flex-col">
 
                 {/* <img onClick={(e) => {e.preventDefault(); changeSong();}} src={ff} className={'invert opacity-50 cursor-pointer hover:opacity-90'} /> */}
@@ -48,7 +48,7 @@ export default function Play(){
                         </h1>
                 </div>
 
-                <div className="flex justify-center items-center gap-4 mb-4 self-center">
+                <div className="flex justify-center w-10/12 md:scale-100 scale-90 items-center gap-4 mb-4 self-center">
                     <YouTubePlayer vid={active.path} />
                     <div className="text-white max-w-[250px] overflow-hidden flex flex-col text-2xl self-center">
                         <p className="marquee font-black m-0 overflow-hidden">{active.title}</p>

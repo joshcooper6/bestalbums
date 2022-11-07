@@ -16,6 +16,14 @@ const Turntable = styled.div`
     background: grey;
     border-radius: 10px;
     box-shadow: inset 0 0 10px rgba(255,255,255,0.7);
+
+    &:before {
+        content: ' ';
+        position: absolute;
+        width: 90%;
+        height: 100%;
+        background: linear-gradient(0, transparent, 40%, rgba(255,255,255,0.35), 60%, transparent);
+    }
 `
 
 const Spin = keyframes`
@@ -60,7 +68,7 @@ const Inner = styled.div`
     transform: translate(-50%, -50%);
     width: 75px;
     height: 75px;
-    /*   background: linear-gradient(white, white 50%, #F796A8 50%, #F796A8); */
+     background: linear-gradient(white, white 50%, #F796A8 50%, #F796A8); 
     background-color: blue;
     background-image: url(${props => props.active.cover});
     background-size: contain;

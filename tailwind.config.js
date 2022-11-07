@@ -5,8 +5,8 @@ module.exports = {
     './src/Landing.js',
     './src/Main.js',
     './src/Player.js',
-    './src/Card.js'
-
+    './src/Card.js',
+    './src/Search.js'
   ],
   theme: {
     extend: {},
